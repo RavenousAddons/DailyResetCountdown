@@ -3,6 +3,10 @@ local L = ns.L
 
 local CT = C_Timer
 
+local hour = L.Units.hour
+local minute = L.Units.minute
+local second = L.Units.second
+
 ---
 -- Local Functions
 ---
@@ -33,13 +37,24 @@ end
 -- @param {boolean} long
 -- @return {string}
 local function Duration(duration)
-    local long = ns:OptionValue("timeFormat") == 2
+    local timeFormat = ns:OptionValue("timeFormat")
     local hours = math.floor(duration / 3600)
     local minutes = math.floor(math.fmod(duration, 3600) / 60)
     local seconds = math.fmod(duration, 60)
-    local h = long and (" hour" .. (hours > 1 and "s" or "")) or "h"
-    local m = long and (" minute" .. (minutes > 1 and "s" or "")) or "m"
-    local s = long and (" second" .. (seconds > 1 and "s" or "")) or "s"
+    local h, m, s
+    if timeFormat == 3 then
+        h = " " .. (hours > 1 and hour.p or hour.s)
+        m = " " .. (minutes > 1 and minute.p or minute.s)
+        s = " " .. (seconds > 1 and second.p or second.s)
+    elseif timeFormat == 2 then
+        h = " " .. hour.a
+        m = " " .. minute.a
+        s = " " .. second.a
+    else
+        h = hour.t
+        m = minute.t
+        s = second.t
+    end
     if hours > 0 then
         if minutes > 0 then
             return string.format("%d" .. h .. " %d" .. m, hours, minutes)

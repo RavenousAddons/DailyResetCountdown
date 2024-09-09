@@ -12,7 +12,7 @@ ns.data = {
         printText = true,
         raidwarning = true,
         displayOnLogin = true,
-        timeFormat = 1,
+        timeFormat = 3,
     },
     timers = {
         alert1Minute = 1,

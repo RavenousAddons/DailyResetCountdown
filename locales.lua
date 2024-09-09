@@ -15,6 +15,26 @@ L.Version = "%s is the current version." -- ns.version
 L.Install = "Thanks for installing version |cff%1$s%2$s|r!" -- ns.color, ns.version
 L.Update = "Thanks for updating to version |cff%1$s%2$s|r!" -- ns.color, ns.version
 L.TimeString = "Daily quests reset in %s at %s."
+L.Units = {
+    hour = {
+        s = "hour",
+        p = "hours",
+        a = "hr.",
+        t = "h",
+    },
+    minute = {
+        s = "minute",
+        p = "minutes",
+        a = "min.",
+        t = "m",
+    },
+    second = {
+        s = "second",
+        p = "seconds",
+        a = "sec.",
+        t = "s",
+    },
+}
 L.AddonCompartmentTooltip1 = "|cff" .. ns.color .. "Left-Click:|r Check Reset"
 L.AddonCompartmentTooltip2 = "|cff" .. ns.color .. "Right-Click:|r Open Settings"
 L.OptionsTitle1 = "When do you want to be alerted?"
@@ -83,8 +103,9 @@ L.OptionsExtra = {
         tooltip = "Choose a short or long time formatting.",
         fn = function()
             local container = Settings.CreateControlTextContainer()
-            container:Add(1, "h, m, s")
-            container:Add(2, "hours, minutes, seconds")
+            container:Add(1, "12" .. L.Units.minute.t .. " 34" .. L.Units.second.t)
+            container:Add(2, "12 " .. L.Units.minute.a .. " 34 " .. L.Units.second.a)
+            container:Add(3, "12 " .. L.Units.minute.p .. " 34 " .. L.Units.second.p)
             return container:GetData()
         end,
     },
