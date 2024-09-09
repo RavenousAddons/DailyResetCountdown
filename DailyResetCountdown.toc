@@ -1,0 +1,16 @@
+## Interface: 110002
+## Version: 1.0.0
+
+## Name: Daily Reset Cooldown
+## Title: Daily Reset Cooldown
+## Notes: Keep track of when the daily reset is.|n|n|cffbbbbbbSlash command: /drc|r
+## Author: RavenousAddons
+## IconAtlas: racing
+
+## SavedVariables: DRC_version
+## SavedVariablesPerCharacter: DRC_options
+
+## X-License: Public Domain
+## X-Website: https://github.com/RavenousAddons/DailyResetCountdown
+
+DailyResetCountdown.xml
