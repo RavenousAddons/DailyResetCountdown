@@ -8,5 +8,5 @@ ns.notes = GetAddOnMetadata(ADDON_NAME, "Notes")
 ns.version = GetAddOnMetadata(ADDON_NAME, "Version")
 ns.icon = GetAddOnMetadata(ADDON_NAME, "IconAtlas")
 ns.color = "ffff00"
-ns.command = "drc"
+ns.command = "reset"
 ns.prefix = "DRC_"

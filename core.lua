@@ -72,4 +72,3 @@ SlashCmdList["DAILYRESETCOUNTDOWN"] = function(message)
     end
 end
 SLASH_DAILYRESETCOUNTDOWN1 = "/" .. ns.command
-SLASH_DAILYRESETCOUNTDOWN2 = "/reset"

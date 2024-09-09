@@ -2,10 +2,8 @@
 
 _Keep track of when the daily reset is._
 
-TODO
-
 ```
-/drc
+/reset
 ```
 
 ## License
