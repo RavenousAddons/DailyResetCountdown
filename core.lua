@@ -7,6 +7,7 @@ local CT = C_Timer
 
 function DailyResetCountdown_OnLoad(self)
     self:RegisterEvent("PLAYER_LOGIN")
+    self:RegisterEvent("PLAYER_ENTERING_WORLD")
 end
 
 -- Event Triggers
@@ -15,6 +16,7 @@ function DailyResetCountdown_OnEvent(self, event, arg, ...)
     if event == "PLAYER_LOGIN" then
         ns:SetDefaultOptions()
         ns:CreateSettingsPanel()
+    elseif event == "PLAYER_ENTERING_WORLD" then
         if not DRC_version then
             ns:PrettyPrint(L.Install:format(ns.color, ns.version))
         elseif DRC_version ~= ns.version then
@@ -26,6 +28,7 @@ function DailyResetCountdown_OnEvent(self, event, arg, ...)
         if ns:OptionValue("displayOnLogin") then
             ns:ResetCheck()
         end
+        self:UnregisterEvent("PLAYER_ENTERING_WORLD")
     end
 end
 
