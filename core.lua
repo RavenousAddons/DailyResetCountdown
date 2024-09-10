@@ -6,26 +6,27 @@ local CT = C_Timer
 -- Load the Addon
 
 function DailyResetCountdown_OnLoad(self)
-    self:RegisterEvent("PLAYER_LOGIN")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
 end
 
 -- Event Triggers
 
-function DailyResetCountdown_OnEvent(self, event, arg, ...)
-    if event == "PLAYER_LOGIN" then
+function DailyResetCountdown_OnEvent(self, event, ...)
+    if event == "PLAYER_ENTERING_WORLD" then
+        local isInitialLogin, isReloadingUi = ...
         ns:SetDefaultOptions()
         ns:CreateSettingsPanel()
-    elseif event == "PLAYER_ENTERING_WORLD" then
-        if not DRC_version then
-            ns:PrettyPrint(L.Install:format(ns.color, ns.version))
-        elseif DRC_version ~= ns.version then
-            -- Version-specific messages go here...
-        end
-        DRC_version = ns.version
-        ns:SetTimers()
-        if ns:OptionValue("displayOnLogin") then
-            ns:ResetCheck()
+        if isInitialLogin then
+            if not DRC_version then
+                ns:PrettyPrint(L.Install:format(ns.color, ns.version))
+            elseif DRC_version ~= ns.version then
+                -- Version-specific messages go here...
+            end
+            DRC_version = ns.version
+            ns:SetTimers()
+            if ns:OptionValue("displayOnLogin") then
+                ns:ResetCheck()
+            end
         end
         self:UnregisterEvent("PLAYER_ENTERING_WORLD")
     end

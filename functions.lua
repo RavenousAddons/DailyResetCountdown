@@ -90,11 +90,6 @@ local function SecondsUntil()
     return GetQuestResetTime() + 1
 end
 
-local function DisplayTimer()
-    local time = TimeFormat(now + secondsUntil)
-    print("|cff" .. ns.color .. L.TimeString:format(Duration(secondsUntil), time) .. "|r")
-end
-
 ---
 -- Namespaced Functions
 ---
