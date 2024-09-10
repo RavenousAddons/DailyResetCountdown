@@ -20,7 +20,6 @@ function DailyResetCountdown_OnEvent(self, event, arg, ...)
         if not DRC_version then
             ns:PrettyPrint(L.Install:format(ns.color, ns.version))
         elseif DRC_version ~= ns.version then
-            ns:PrettyPrint(L.Update:format(ns.color, ns.version))
             -- Version-specific messages go here...
         end
         DRC_version = ns.version

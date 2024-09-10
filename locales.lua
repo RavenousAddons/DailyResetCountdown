@@ -13,7 +13,6 @@ end })
 -- English
 L.Version = "%s is the current version." -- ns.version
 L.Install = "Thanks for installing version |cff%1$s%2$s|r!" -- ns.color, ns.version
-L.Update = "Thanks for updating to version |cff%1$s%2$s|r!" -- ns.color, ns.version
 L.TimeString = "Daily quests reset in %s at %s."
 L.Units = {
     hour = {
