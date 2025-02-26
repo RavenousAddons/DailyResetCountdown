@@ -14,8 +14,8 @@ end
 function DailyResetCountdown_OnEvent(self, event, ...)
     if event == "PLAYER_ENTERING_WORLD" then
         local isInitialLogin, isReloadingUi = ...
-        ns:SetDefaultOptions()
-        ns:CreateSettingsPanel()
+        ns:SetOptionDefaults()
+        ns:CreateSettingsPanel(DRC_options, ns.data.defaults, L.Settings, ns.name, ns.prefix, ns.version)
         if isInitialLogin then
             if not DRC_version then
                 ns:PrettyPrint(L.Install:format(ns.color, ns.version))
@@ -24,7 +24,7 @@ function DailyResetCountdown_OnEvent(self, event, ...)
             end
             DRC_version = ns.version
             ns:SetTimers()
-            if ns:OptionValue("displayOnLogin") then
+            if ns:OptionValue(DRC_options, "displayOnLogin") then
                 ns:ResetCheck()
             end
         end

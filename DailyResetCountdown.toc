@@ -1,11 +1,23 @@
-## Interface: 110005
-## Version: 1.0.2
+## Interface: 110100
+## Version: 1.0.3
 
 ## Name: Daily Reset Cooldown
 ## Title: Daily Reset Cooldown
 ## Notes: Keep track of when the daily reset is.|n|n|cffbbbbbbSlash command: /reset|r
 ## Author: RavenousAddons
 ## IconAtlas: racing
+
+## Category-enUS: Data Broker
+## Category-deDE: Datenbroker
+## Category-esES: Intermediario de Datos
+## Category-esMX: Intermediario de Datos
+## Category-frFR: Courtier de Données
+## Category-itIT:
+## Category-koKR:
+## Category-ptBR: Corretor de Dados
+## Category-ruRU: Посредник данных
+## Category-zhCN: 数据管理
+## Category-zhTW: 資料管理
 
 ## SavedVariables: DRC_version
 ## SavedVariablesPerCharacter: DRC_options
@@ -14,4 +26,7 @@
 ## X-Website: https://github.com/RavenousAddons/DailyResetCountdown
 ## X-Curse-Project-ID: 1099953
 
+Libs/RavenousUtils/RavenousUtils.xml
+Libs/RavenousUtilsTemporal/RavenousUtilsTemporal.xml
+Libs/RavenousOptions/RavenousOptions.xml
 DailyResetCountdown.xml
